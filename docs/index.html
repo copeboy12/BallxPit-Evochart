@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BALL x PIT Evolution Chart</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand-mark">BxP</div>
+    <div>
+      <p class="eyebrow">Ball-fusing guide</p>
+      <h1>BALL x PIT Evolution Chart</h1>
+    </div>
+  </header>
+
+  <main class="chart-shell">
+    <nav class="tabs" id="categoryTabs" aria-label="Chart categories"></nav>
+
+    <section class="controls" aria-label="Chart controls">
+      <label class="search-box">
+        <span>Search</span>
+        <input id="searchInput" type="search" placeholder="ball, passive, evolution, tag">
+      </label>
+      <button class="tool-button" id="sortButton" type="button">Sort by result</button>
+      <button class="tool-button" id="resetButton" type="button">Reset</button>
+    </section>
+
+    <section class="filter-panel">
+      <button class="accordion" id="ballToggle" type="button">
+        <span>Balls</span>
+        <span id="ballCount">0 selected</span>
+      </button>
+      <div class="chip-grid" id="ballGrid" aria-label="Ball filters"></div>
+    </section>
+
+    <section class="filter-panel">
+      <button class="accordion" id="passiveToggle" type="button">
+        <span>Passives</span>
+        <span id="passiveCount">0 selected</span>
+      </button>
+      <div class="chip-grid" id="passiveGrid" aria-label="Passive filters"></div>
+    </section>
+
+    <section class="status-row">
+      <span id="matchCount">0 matches</span>
+      <span id="activeHint">Pick balls or passives to highlight matching evolutions.</span>
+    </section>
+
+    <section class="recipe-grid" id="recipeGrid" aria-label="Evolution recipes"></section>
+  </main>
+
+  <aside class="detail-panel" id="detailPanel" aria-label="Selected evolution details">
+    <p class="eyebrow">Details</p>
+    <h2>Select an evolution</h2>
+    <p>Click a recipe card to pin the inputs, result, and notes here.</p>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
