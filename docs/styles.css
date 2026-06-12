@@ -188,20 +188,28 @@ h1 {
 }
 
 .ball-icon,
-.passive-icon {
-  display: inline-grid;
-  place-items: center;
+.passive-icon,
+.result-icon {
+  display: inline-block;
   width: 28px;
   height: 28px;
   flex: 0 0 auto;
-  border-radius: 50%;
-  color: #101116;
-  font-size: 0.72rem;
-  font-weight: 900;
+  border: 1px solid rgba(120, 74, 68, 0.85);
+  border-radius: 4px;
+  background: rgba(20, 12, 14, 0.86);
+  image-rendering: pixelated;
+  object-fit: contain;
+  padding: 1px;
 }
 
 .passive-icon {
-  border-radius: 7px;
+  border-color: rgba(255, 205, 96, 0.65);
+}
+
+.result-icon {
+  width: 32px;
+  height: 32px;
+  border-color: rgba(105, 217, 255, 0.72);
 }
 
 .status-row {
