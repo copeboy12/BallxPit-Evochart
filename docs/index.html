@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BALL x PIT Evolution Chart</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
@@ -12,79 +12,41 @@
     <div>
       <p class="eyebrow">Ball-fusing guide</p>
       <h1>BALL x PIT Evolution Chart</h1>
+      <p class="subtitle">Search, filter, and click recipes to see real evolution paths.</p>
     </div>
   </header>
 
-  <main class="chart-shell">
-    <nav class="tabs" id="categoryTabs" aria-label="Chart categories"></nav>
+  <main class="layout">
+    <section class="chart-shell">
+      <div id="categoryTabs" class="tabs"></div>
 
-    <section class="controls" aria-label="Chart controls">
-      <label class="search-box">
-        <span>Search</span>
-        <input id="searchInput" type="search" placeholder="ball, passive, evolution, tag">
-      </label>
-      <button class="tool-button" id="sortButton" type="button">Sort by result</button>
-      <button class="tool-button" id="resetButton" type="button">Reset</button>
-    </section>
-
-    <section class="filter-panel">
-      <button class="accordion" id="ballToggle" type="button">
-        <span>Balls</span>
-        <span id="ballCount">0 selected</span>
-      </button>
-      <div class="chip-grid" id="ballGrid" aria-label="Ball filters"></div>
-    </section>
-
-    <section class="filter-panel">
-      <button class="accordion" id="passiveToggle" type="button">
-        <span>Passives</span>
-        <span id="passiveCount">0 selected</span>
-      </button>
-      <div class="chip-grid" id="passiveGrid" aria-label="Passive filters"></div>
-    </section>
-
-    <section class="status-row">
-      <span id="matchCount">0 matches</span>
-      <span id="activeHint">Pick balls or passives to highlight matching evolutions.</span>
-    </section>
-
-    <section class="recipe-grid" id="recipeGrid" aria-label="Evolution recipes"></section>
-
-    <section class="reference-section" aria-label="Reference tables">
-      <div class="section-heading">
-        <p class="eyebrow">Source images</p>
-        <h2>Reference Tables</h2>
+      <div class="controls">
+        <label class="search-box">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="Try: burn, vampire lord, shadow, laser..." />
+        </label>
+        <button id="strictButton" class="tool-button">Match any selected</button>
+        <button id="resetButton" class="tool-button">Reset</button>
       </div>
-      <div class="reference-grid">
-        <a class="reference-card wide" href="assets/reference/encyclopedia-evolutions.png" target="_blank" rel="noreferrer">
-          <img src="assets/reference/encyclopedia-evolutions.png" alt="BALL x PIT encyclopedia evolution table">
-          <span>Encyclopedia Table</span>
-        </a>
-        <a class="reference-card wide" href="assets/reference/all-evolutions-v12788.jpeg" target="_blank" rel="noreferrer">
-          <img src="assets/reference/all-evolutions-v12788.jpeg" alt="BALL x PIT all evolutions table version 1.2788">
-          <span>All Evolutions v1.2788</span>
-        </a>
-        <a class="reference-card" href="assets/reference/evolutions-and-passives-v1292.webp" target="_blank" rel="noreferrer">
-          <img src="assets/reference/evolutions-and-passives-v1292.webp" alt="BALL x PIT evolutions and passives table version 1.292">
-          <span>Evolutions + Passives v1.292</span>
-        </a>
-        <a class="reference-card" href="assets/reference/evolution-matrix.webp" target="_blank" rel="noreferrer">
-          <img src="assets/reference/evolution-matrix.webp" alt="BALL x PIT evolution matrix">
-          <span>Evolution Matrix</span>
-        </a>
-        <a class="reference-card" href="assets/reference/all-evolutions-v12788-alt.jpeg" target="_blank" rel="noreferrer">
-          <img src="assets/reference/all-evolutions-v12788-alt.jpeg" alt="BALL x PIT all evolutions alternate table">
-          <span>All Evolutions Alternate</span>
-        </a>
+
+      <section class="filter-panel">
+        <div class="filter-heading">
+          <h2>Balls & Evolutions</h2>
+          <span id="selectedCount">0 selected</span>
+        </div>
+        <div id="itemGrid" class="chip-grid"></div>
+      </section>
+
+      <div class="status-row">
+        <strong id="matchCount">0 matches</strong>
+        <span>Tip: click multiple balls, then switch between any/all matching.</span>
       </div>
+
+      <section id="recipeGrid" class="recipe-grid" aria-live="polite"></section>
     </section>
+
+    <aside id="detailPanel" class="detail-panel"></aside>
   </main>
-
-  <aside class="detail-panel" id="detailPanel" aria-label="Selected evolution details">
-    <p class="eyebrow">Details</p>
-    <h2>Select an evolution</h2>
-    <p>Click a recipe card to pin the inputs, result, and notes here.</p>
-  </aside>
 
   <script src="script.js"></script>
 </body>
